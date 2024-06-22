@@ -32,7 +32,7 @@ const addClient = async (req, res) => {
 
             if (client) {
                 const token = generateToken(client._id, client.role);
-                const url = `http://localhost:3000/verifymail/${token}`;
+                const url = `https://servicebazaar-erp-crm-frontend.onrender.com/verifymail/${token}`;
                 const html = `
         <p style="font-size: 25px; font-weight: 600; color: black; ">Welcome ${client.name}!</p> <br/>
         <p>Your verification link is  <span style=" font-weight: 600; color: black; "><a href="${url}"><button style="background-color: blue; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer;border-radius: 7px">Link</button></a></span></p> <br/>
