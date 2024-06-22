@@ -37,44 +37,44 @@ const Sidebar = () => {
                 <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
                     <ul class="space-y-2 font-medium">
                         <li>
-                            <a href="#" class="flex items-start p-2 pl-0 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <a  class="flex items-start p-2 pl-0 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                                 <img style={{ width: "200px", height: "50px", objectFit:"cover"}} src="./assets/sblogo.png" alt="companylogo" srcset="" />
                             </a>
                         </li>
                        { ( userInfo?.role === "owner" || userInfo?.role === "super-admin") &&  <li>
-                            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" onClick={()=>{navigate('/dashboard')}}>
+                            <a  class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" onClick={()=>{navigate('/dashboard')}}>
                                <DashboardIcon/>
                                 <span class="ms-3">Dashboard</span>
                             </a>
                         </li>}
                       { ( userInfo?.role !== "client" && userInfo?.role !== "employee") && <li>
-                            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"onClick={()=>{navigate('/client')}}>
+                            <a  class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"onClick={()=>{navigate('/client')}}>
                                 <HeadsetIcon/>
                                 <span class="flex-1 ms-3 whitespace-nowrap">Clients</span>
                                 <span class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
                             </a>
                         </li>}
                         <li>
-                            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" onClick={()=>{navigate('/order')}}>
+                            <a  class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" onClick={()=>{navigate('/order')}}>
                                <BookmarkBorderIcon/>
                                 <span class="flex-1 ms-3 whitespace-nowrap">Orders</span>
                                 <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
                             </a>
                         </li>
                       {( userInfo?.role !== "client" && userInfo?.role !== "employee") &&  <li>
-                            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"onClick={()=>{navigate('/employee')}}>
+                            <a  class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"onClick={()=>{navigate('/employee')}}>
                                 <BadgeIcon/>
                                 <span class="flex-1 ms-3 whitespace-nowrap">Employee</span>
                             </a>
                         </li>}
                       { userInfo?.role !== "client" && <li>
-                            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" onClick={()=>{navigate('/service')}} >
+                            <a  class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" onClick={()=>{navigate('/service')}} >
                                 <HomeRepairServiceIcon/>
                                 <span class="flex-1 ms-3 whitespace-nowrap">Services</span>
                             </a>
                         </li>}
                         <li>
-                            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <a  class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                                <PictureAsPdfIcon/>
                                 <span class="flex-1 ms-3 whitespace-nowrap">Invoice</span>
                             </a>
@@ -89,13 +89,13 @@ const Sidebar = () => {
                             </button>
                             <ul id="dropdown-example" class=" py-2 space-y-2" style={open ? { display :"block"} : { display : "none"}}>
                                 <li>
-                                    <a href="#" class="flex items-center gap-3 w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" onClick={()=>{ setOpen(false); navigate('/profile')}} > <AccountCircleIcon/>  Profile</a>
+                                    <a  class="flex items-center gap-3 w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" onClick={()=>{ setOpen(false); navigate('/profile')}} > <AccountCircleIcon/>  Profile</a>
                                 </li>
                                 { userInfo?.role === "owner" && <li>
-                                    <a href="#" class="flex items-center gap-3 w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"  onClick={()=>{ setOpen(false); navigate('/admin-setting')}} > <AdminPanelSettingsIcon/>   Admin</a>
+                                    <a  class="flex items-center gap-3 w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"  onClick={()=>{ setOpen(false); navigate('/admin-setting')}} > <AdminPanelSettingsIcon/>   Admin</a>
                                 </li>}
                                 <li>
-                                    <a href="#" class="flex items-center gap-3 w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"  onClick={()=>{ setOpen(false); handleLogOut();}}> <LogoutIcon/> Logout</a>
+                                    <a  class="flex items-center gap-3 w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"  onClick={()=>{ setOpen(false); handleLogOut();}}> <LogoutIcon/> Logout</a>
                                 </li>
                             </ul>
                         </li>
