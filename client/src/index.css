@@ -70,3 +70,7 @@ code {
   background-color: #c3cd24 !important;
   background-image: linear-gradient(315deg, #9a7f7f 0%, #888bad 74%) !important;
 }
+
+a {
+  cursor: pointer !important;
+}
